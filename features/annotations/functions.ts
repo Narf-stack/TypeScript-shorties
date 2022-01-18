@@ -38,7 +38,7 @@ const todaysWeather = {
     weather: 'sunny'
 };
 
-//destructuring
+//ES2015 destructuring the variable  todaysWeather = {date, weather}
 const logWeather = ({
     date,
     weather
