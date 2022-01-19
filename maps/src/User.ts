@@ -1,7 +1,11 @@
 import faker from 'faker';
+import { Mappable } from './CustomMap'
 
 
-export class User {
+// implements Mappable = tells TS that we want to make sure that an instance of User 
+// satisfy all Mappable's requirements. 
+// That will hep us to see errors 
+export class User implements Mappable {
     name: string;
     location: {
         lat: number;
