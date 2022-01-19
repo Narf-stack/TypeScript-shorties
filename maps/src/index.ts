@@ -5,4 +5,9 @@ import { CustomMap } from './CustomMap'
 import { Company } from './Company'
 
 
-new CustomMap('map');
+const user = new User();
+const cpny = new Company();
+const map = new CustomMap('map');
+
+map.addMarker(user);
+map.addMarker(cpny)
