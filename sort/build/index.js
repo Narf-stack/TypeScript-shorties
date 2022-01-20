@@ -1,2 +1,2 @@
 "use strict";
-console.log('terse');
+console.log('123');
