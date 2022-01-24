@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var NumbersCollection_1 = require("./NumbersCollection");
 var CharactersCollection_1 = require("./CharactersCollection");
+var LinkedList_1 = require("./LinkedList");
 // No Refacto
 // const numberCollection = new NumbersCollection([10000,3,-5,0])
 // const sorter = new Sorter(numberCollection);
@@ -26,3 +27,10 @@ console.log(numberCollection.data);
 var characCollection = new CharactersCollection_1.CharactersCollection('Xaayb');
 characCollection.sort();
 console.log(characCollection.data);
+var linkedList = new LinkedList_1.LinkedList();
+linkedList.add(500);
+linkedList.add(-10);
+linkedList.add(-3);
+linkedList.add(4);
+linkedList.sort();
+linkedList.print();

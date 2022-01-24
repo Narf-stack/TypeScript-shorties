@@ -1,6 +1,95 @@
 "use strict";
+// No refacto
+// class Node {
+//     next: Node | null = null; //Default to null
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LinkedList = void 0;
+//     constructor(public data:number){}
+// }
+// export class LinkedList {
+//     head: Node | null = null; //Default to null 
+//     add(data: number): void {
+//         const node = new Node(data);
+//         if (!this.head) {
+//           this.head = node;
+//           return;
+//         }
+//         let tail = this.head;
+//         while (tail.next) {
+//           tail = tail.next;
+//         }
+//         tail.next = node;
+//     }
+//     get length(): number{
+//         if(!this.head){
+//             return 0
+//         }
+//         let length = 1
+//         let node = this.head;
+//         while (node.next){
+//             length ++
+//             node = node.next;
+//         } 
+//         return length
+//     }
+//     at(index:number):Node{
+//         if (!this.head){
+//             throw new Error('Index out of bounds')
+//         }
+//         let counter = 0
+//         let node : Node | null = this.head
+//         while(node){
+//             if(counter === index){
+//                 return node
+//             }
+//             counter ++
+//             node = node.next
+//         }
+//         throw new Error('Index out of bounds')
+//     }
+//     compare(leftIndex:number, rightIndex: number): boolean {
+//         if (!this.head){
+//             throw new Error('List is empty')
+//         }
+//         return (
+//             this.at(leftIndex).data > this.at(rightIndex).data
+//         )
+//     }
+//     swap(leftIndex:number, rightIndex:number): void{
+//         const leftNode = this.at(leftIndex);
+//         const rightNode = this.at(rightIndex)
+//         const leftHand = leftNode.data
+//         leftNode.data = rightNode.data
+//         rightNode.data = leftHand
+//     }
+//     print():void{
+//         if (!this.head){
+//             return;
+//         }
+//         let node : Node | null = this.head
+//         while( node){
+//             console.log(node.data)
+//             node = node.next
+//         }
+//     }
+// }
+// Refacto
+var Sorter_1 = require("./Sorter");
 var Node = /** @class */ (function () {
     function Node(data) {
         this.data = data;
@@ -8,9 +97,12 @@ var Node = /** @class */ (function () {
     }
     return Node;
 }());
-var LinkedList = /** @class */ (function () {
+var LinkedList = /** @class */ (function (_super) {
+    __extends(LinkedList, _super);
     function LinkedList() {
-        this.head = null; //Default to null 
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.head = null; //Default to null 
+        return _this;
     }
     LinkedList.prototype.add = function (data) {
         var node = new Node(data);
@@ -79,5 +171,5 @@ var LinkedList = /** @class */ (function () {
         }
     };
     return LinkedList;
-}());
+}(Sorter_1.Sorter));
 exports.LinkedList = LinkedList;
