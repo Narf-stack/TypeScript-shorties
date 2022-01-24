@@ -2,8 +2,28 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CharactersCollection = void 0;
 var CharactersCollection = /** @class */ (function () {
-    function CharactersCollection() {
+    function CharactersCollection(data) {
+        this.data = data;
     }
+    Object.defineProperty(CharactersCollection.prototype, "length", {
+        get: function () {
+            // get = getter, we can call it like it is a property and not a method
+            // new NumbersCollection.length  instead of new NumbersCollection.length()
+            return this.data.length;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    CharactersCollection.prototype.compare = function (leftIndex, rightIndex) {
+        return (this.data[leftIndex].toLocaleLowerCase() > this.data[rightIndex].toLocaleLowerCase());
+    };
+    CharactersCollection.prototype.swap = function (leftIndex, rightIndex) {
+        var characters = this.data.split('');
+        var leftHand = characters[leftIndex];
+        characters[leftIndex] = characters[rightIndex];
+        characters[rightIndex] = leftHand;
+        this.data = characters.join('');
+    };
     return CharactersCollection;
 }());
 exports.CharactersCollection = CharactersCollection;
