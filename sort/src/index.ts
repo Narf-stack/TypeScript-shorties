@@ -31,3 +31,8 @@ import { LinkedList } from "./LinkedList";
 const numberCollection = new NumbersCollection([10000,3,-5,0])
 numberCollection.sort();
 console.log(numberCollection.data)
+
+
+const characCollection = new CharactersCollection('Xaayb')
+characCollection.sort();
+console.log(characCollection.data)

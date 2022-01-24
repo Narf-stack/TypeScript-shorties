@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var NumbersCollection_1 = require("./NumbersCollection");
+var CharactersCollection_1 = require("./CharactersCollection");
 // No Refacto
 // const numberCollection = new NumbersCollection([10000,3,-5,0])
 // const sorter = new Sorter(numberCollection);
@@ -22,3 +23,6 @@ var NumbersCollection_1 = require("./NumbersCollection");
 var numberCollection = new NumbersCollection_1.NumbersCollection([10000, 3, -5, 0]);
 numberCollection.sort();
 console.log(numberCollection.data);
+var characCollection = new CharactersCollection_1.CharactersCollection('Xaayb');
+characCollection.sort();
+console.log(characCollection.data);
