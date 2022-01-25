@@ -10,6 +10,7 @@ var CsvFileReader = /** @class */ (function () {
         this.filename = filename;
         this.data = [];
     }
+    //will be implementeds by the child class
     CsvFileReader.prototype.read = function () {
         // read CSV Node "fs" library
         this.data = fs_1.default.readFileSync(this.filename, {
@@ -17,7 +18,8 @@ var CsvFileReader = /** @class */ (function () {
         }).split('\n')
             .map(function (row) {
             return row.split(',');
-        });
+        })
+            .map(this.mapRow);
     };
     return CsvFileReader;
 }());

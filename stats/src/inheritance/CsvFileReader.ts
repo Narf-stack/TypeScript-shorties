@@ -1,10 +1,13 @@
 import fs from 'fs';
 
 
-export class CsvFileReader {
-    data: string[][] = []
+export abstract class CsvFileReader<TypeOfData> {
+    data: TypeOfData[] = []
     
     constructor(public filename:string){ }
+
+    abstract mapRow(row:string[]): TypeOfData; // "abstract",indicates that it 
+    //will be implementeds by the child class
 
     read():void{
     // read CSV Node "fs" library
@@ -14,5 +17,6 @@ export class CsvFileReader {
     .map((row:string):string[]=>{
         return row.split(',');
     })
+    .map(this.mapRow)
     }
 }
