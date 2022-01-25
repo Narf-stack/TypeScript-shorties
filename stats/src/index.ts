@@ -1,10 +1,10 @@
-import {CsvFileReader} from './CsvFileReader';
+import {MatchReader} from './MatchReader';
 import { MatchResult } from './MatchResult';
 
 
 
 // read CSV Node "fs" library
-const reader = new CsvFileReader('football.csv')
+const reader = new MatchReader('football.csv')
 reader.read()
 
 
