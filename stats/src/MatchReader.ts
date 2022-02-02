@@ -1,9 +1,8 @@
 import { MatchResult } from './MatchResult';
 import { CsvFileReader } from "./CsvFileReader";
 import { dateStringToDate } from './utils';
+import { MatchData } from './MatchData'
 
-
-type MatchData = [Date, string,string, number, number, MatchResult, string]
 
 interface DataReader {
     read():void;
