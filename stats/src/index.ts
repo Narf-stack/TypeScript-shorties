@@ -4,7 +4,7 @@ import { CsvFileReader } from './CsvFileReader'
 import { ConsoleReport } from './reportTargets/ConsoleReport';
 import { WinsAnalysis } from './analyzers/WinsAnalysis';
 import { Summary } from './Summary';
-
+import { HtmlReport } from './reportTargets/HtmlReport';
 
 // read CSV Node "fs" library
 // const reader = new MatchReader('football.csv')
@@ -33,9 +33,16 @@ matchReader.load()
 
 // console.log(manUnitedWins)
 
+// Print the report on terminal 
 const summary = new Summary(
     new WinsAnalysis('Man United'),
     new ConsoleReport()
 )
 
 summary.buildAndPrintReport(matchReader.matches)
+
+// Create an Html page
+const summary2 = new Summary(
+    new WinsAnalysis('Man United'),
+    new HtmlReport()
+)

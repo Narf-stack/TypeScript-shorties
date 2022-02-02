@@ -6,6 +6,7 @@ var CsvFileReader_1 = require("./CsvFileReader");
 var ConsoleReport_1 = require("./reportTargets/ConsoleReport");
 var WinsAnalysis_1 = require("./analyzers/WinsAnalysis");
 var Summary_1 = require("./Summary");
+var HtmlReport_1 = require("./reportTargets/HtmlReport");
 // read CSV Node "fs" library
 // const reader = new MatchReader('football.csv')
 // reader.read()
@@ -24,5 +25,8 @@ matchReader.load();
 //     }
 // }
 // console.log(manUnitedWins)
+// Print the report on terminal 
 var summary = new Summary_1.Summary(new WinsAnalysis_1.WinsAnalysis('Man United'), new ConsoleReport_1.ConsoleReport());
 summary.buildAndPrintReport(matchReader.matches);
+// Create an Html page
+var summary2 = new Summary_1.Summary(new WinsAnalysis_1.WinsAnalysis('Man United'), new HtmlReport_1.HtmlReport());
