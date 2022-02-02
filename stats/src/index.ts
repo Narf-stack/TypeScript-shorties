@@ -1,7 +1,9 @@
 import {MatchReader} from './MatchReader';
-import { MatchResult } from './MatchResult';
+// import { MatchResult } from './MatchResult';
 import { CsvFileReader } from './CsvFileReader'
-
+import { ConsoleReport } from './reportTargets/ConsoleReport';
+import { WinsAnalysis } from './analyzers/WinsAnalysis';
+import { Summary } from './Summary';
 
 
 // read CSV Node "fs" library
@@ -30,3 +32,10 @@ matchReader.load()
 // }
 
 // console.log(manUnitedWins)
+
+const summary = new Summary(
+    new WinsAnalysis('Man United'),
+    new ConsoleReport()
+)
+
+summary.buildAndPrintReport(matchReader.matches)
